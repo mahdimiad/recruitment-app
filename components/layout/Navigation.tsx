@@ -2,12 +2,44 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { isLoggedIn, logout as authLogout } from '@/lib/utils/auth'
 
 export default function Navigation() {
+  const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() => {
+    // Check login status on mount and when it might change
+    setLoggedIn(isLoggedIn())
+    
+    // Listen for storage changes (in case of logout from another tab)
+    const handleStorageChange = () => {
+      setLoggedIn(isLoggedIn())
+    }
+    window.addEventListener('storage', handleStorageChange)
+    
+    // Check periodically (for same-tab changes)
+    const interval = setInterval(() => {
+      setLoggedIn(isLoggedIn())
+    }, 1000)
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange)
+      clearInterval(interval)
+    }
+  }, [])
+
+  const handleLogout = () => {
+    authLogout()
+    setLoggedIn(false)
+    router.push('/')
+    router.refresh()
+  }
 
   return (
     <nav className="bg-gray-800 shadow-sm">
@@ -60,18 +92,30 @@ export default function Navigation() {
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Link
-              href="/login"
-              className="px-4 py-2 text-sm font-medium text-primary-400 hover:text-primary-300"
-            >
-              Log in
-            </Link>
-            <Link
-              href="/signup"
-              className="ml-3 px-4 py-2 rounded-md text-sm font-medium text-gray-900 bg-gradient-to-r from-primary-400 to-primary-400 hover:from-primary-500 hover:to-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-            >
-              Sign up
-            </Link>
+            {loggedIn ? (
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-primary-400 flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faSignOutAlt} />
+                Log out
+              </button>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="px-4 py-2 text-sm font-medium text-primary-400 hover:text-primary-300"
+                >
+                  Log in
+                </Link>
+                <Link
+                  href="/signup"
+                  className="ml-3 px-4 py-2 rounded-md text-sm font-medium text-gray-900 bg-gradient-to-r from-primary-400 to-primary-400 hover:from-primary-500 hover:to-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  Sign up
+                </Link>
+              </>
+            )}
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
             <button
@@ -120,20 +164,35 @@ export default function Navigation() {
               Dashboard
             </Link>
             <div className="pt-4 pb-3 border-t border-gray-700">
-              <Link
-                href="/login"
-                className="block px-3 py-2 text-base font-medium text-primary-400"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Log in
-              </Link>
-              <Link
-                href="/signup"
-                className="mt-2 block px-3 py-2 text-base font-medium text-gray-900 bg-gradient-to-r from-primary-400 to-primary-400 rounded-md"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Sign up
-              </Link>
+              {loggedIn ? (
+                <button
+                  onClick={() => {
+                    handleLogout()
+                    setMobileMenuOpen(false)
+                  }}
+                  className="w-full text-left px-3 py-2 text-base font-medium text-gray-300 hover:text-primary-400 flex items-center gap-2"
+                >
+                  <FontAwesomeIcon icon={faSignOutAlt} />
+                  Log out
+                </button>
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    className="block px-3 py-2 text-base font-medium text-primary-400"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Log in
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className="mt-2 block px-3 py-2 text-base font-medium text-gray-900 bg-gradient-to-r from-primary-400 to-primary-400 rounded-md"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Sign up
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
