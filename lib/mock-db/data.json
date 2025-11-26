@@ -12,8 +12,8 @@
       "max_jobs": 1000,
       "max_cv_uploads_per_month": 1000,
       "storage_limit_gb": 100,
-      "created_at": "2024-01-15T10:00:00Z",
-      "updated_at": "2024-01-15T10:00:00Z"
+      "created_at": "2028-01-15T10:00:00Z",
+      "updated_at": "2028-11-20T10:00:00Z"
     },
     {
       "id": "company-2",
@@ -27,8 +27,8 @@
       "max_jobs": 5000,
       "max_cv_uploads_per_month": 5000,
       "storage_limit_gb": 500,
-      "created_at": "2024-02-01T10:00:00Z",
-      "updated_at": "2024-02-01T10:00:00Z"
+      "created_at": "2028-02-01T10:00:00Z",
+      "updated_at": "2028-11-20T10:00:00Z"
     }
   ],
   "profiles": [
@@ -39,7 +39,7 @@
       "avatar_url": null,
       "company_id": "company-1",
       "role": "admin",
-      "created_at": "2024-01-15T10:00:00Z"
+      "created_at": "2028-01-15T10:00:00Z"
     },
     {
       "id": "user-2",
@@ -48,7 +48,7 @@
       "avatar_url": null,
       "company_id": "company-1",
       "role": "recruiter",
-      "created_at": "2024-01-16T10:00:00Z"
+      "created_at": "2028-01-16T10:00:00Z"
     },
     {
       "id": "user-3",
@@ -57,7 +57,7 @@
       "avatar_url": null,
       "company_id": "company-1",
       "role": "recruiter",
-      "created_at": "2024-01-17T10:00:00Z"
+      "created_at": "2028-01-17T10:00:00Z"
     }
   ],
   "jobs": [
@@ -72,8 +72,8 @@
       "salary_max": 180000,
       "status": "published",
       "created_by": "user-1",
-      "created_at": "2024-01-20T10:00:00Z",
-      "updated_at": "2024-01-20T10:00:00Z"
+      "created_at": "2028-09-15T10:00:00Z",
+      "updated_at": "2028-11-20T10:00:00Z"
     },
     {
       "id": "job-2",
@@ -86,8 +86,8 @@
       "salary_max": 160000,
       "status": "published",
       "created_by": "user-1",
-      "created_at": "2024-01-21T10:00:00Z",
-      "updated_at": "2024-01-21T10:00:00Z"
+      "created_at": "2028-09-20T10:00:00Z",
+      "updated_at": "2028-11-18T10:00:00Z"
     },
     {
       "id": "job-3",
@@ -100,8 +100,8 @@
       "salary_max": 130000,
       "status": "draft",
       "created_by": "user-2",
-      "created_at": "2024-01-22T10:00:00Z",
-      "updated_at": "2024-01-22T10:00:00Z"
+      "created_at": "2028-10-05T10:00:00Z",
+      "updated_at": "2028-11-15T10:00:00Z"
     },
     {
       "id": "job-4",
@@ -114,8 +114,22 @@
       "salary_max": 180000,
       "status": "published",
       "created_by": "user-1",
-      "created_at": "2024-01-23T10:00:00Z",
-      "updated_at": "2024-01-23T10:00:00Z"
+      "created_at": "2028-10-10T10:00:00Z",
+      "updated_at": "2028-11-22T10:00:00Z"
+    },
+    {
+      "id": "job-5",
+      "company_id": "company-1",
+      "title": "DevOps Engineer",
+      "description": "We are seeking a DevOps Engineer to help build and maintain our cloud infrastructure and CI/CD pipelines.",
+      "location": "Seattle, WA",
+      "job_type": "full-time",
+      "salary_min": 125000,
+      "salary_max": 175000,
+      "status": "published",
+      "created_by": "user-1",
+      "created_at": "2028-10-25T10:00:00Z",
+      "updated_at": "2028-11-24T10:00:00Z"
     }
   ],
   "job_requirements": [
@@ -174,6 +188,34 @@
       "skill": "REST API",
       "weight": 0.1,
       "required": false
+    },
+    {
+      "id": "req-9",
+      "job_id": "job-5",
+      "skill": "Docker",
+      "weight": 0.3,
+      "required": true
+    },
+    {
+      "id": "req-10",
+      "job_id": "job-5",
+      "skill": "Kubernetes",
+      "weight": 0.3,
+      "required": true
+    },
+    {
+      "id": "req-11",
+      "job_id": "job-5",
+      "skill": "AWS",
+      "weight": 0.2,
+      "required": false
+    },
+    {
+      "id": "req-12",
+      "job_id": "job-5",
+      "skill": "CI/CD",
+      "weight": 0.2,
+      "required": false
     }
   ],
   "candidates": [
@@ -196,8 +238,8 @@
         ],
         "summary": "Experienced frontend developer with 5+ years building React applications"
       },
-      "created_at": "2024-01-25T10:00:00Z",
-      "updated_at": "2024-01-25T10:00:00Z"
+      "created_at": "2028-10-28T10:00:00Z",
+      "updated_at": "2028-11-15T10:00:00Z"
     },
     {
       "id": "candidate-2",
@@ -218,8 +260,8 @@
         ],
         "summary": "Senior backend engineer specializing in scalable systems"
       },
-      "created_at": "2024-01-26T10:00:00Z",
-      "updated_at": "2024-01-26T10:00:00Z"
+      "created_at": "2028-10-30T10:00:00Z",
+      "updated_at": "2028-11-18T10:00:00Z"
     },
     {
       "id": "candidate-3",
@@ -240,8 +282,8 @@
         ],
         "summary": "Creative UX/UI designer with expertise in user research and prototyping"
       },
-      "created_at": "2024-01-27T10:00:00Z",
-      "updated_at": "2024-01-27T10:00:00Z"
+      "created_at": "2028-11-02T10:00:00Z",
+      "updated_at": "2028-11-20T10:00:00Z"
     },
     {
       "id": "candidate-4",
@@ -262,8 +304,8 @@
         ],
         "summary": "Product manager with experience launching successful SaaS products"
       },
-      "created_at": "2024-01-28T10:00:00Z",
-      "updated_at": "2024-01-28T10:00:00Z"
+      "created_at": "2028-11-05T10:00:00Z",
+      "updated_at": "2028-11-22T10:00:00Z"
     },
     {
       "id": "candidate-5",
@@ -284,8 +326,8 @@
         ],
         "summary": "Frontend developer passionate about building accessible web applications"
       },
-      "created_at": "2024-01-29T10:00:00Z",
-      "updated_at": "2024-01-29T10:00:00Z"
+      "created_at": "2028-11-08T10:00:00Z",
+      "updated_at": "2028-11-24T10:00:00Z"
     }
   ],
   "candidate_skills": [
@@ -388,8 +430,8 @@
       "status": "shortlisted",
       "score": 87,
       "match_percentage": 83,
-      "created_at": "2024-01-25T11:00:00Z",
-      "updated_at": "2024-01-26T10:00:00Z"
+      "created_at": "2028-10-28T11:00:00Z",
+      "updated_at": "2028-11-02T10:00:00Z"
     },
     {
       "id": "app-2",
@@ -398,8 +440,8 @@
       "status": "interviewed",
       "score": 92,
       "match_percentage": 91,
-      "created_at": "2024-01-26T11:00:00Z",
-      "updated_at": "2024-01-27T10:00:00Z"
+      "created_at": "2028-10-30T11:00:00Z",
+      "updated_at": "2028-11-05T10:00:00Z"
     },
     {
       "id": "app-3",
@@ -408,8 +450,8 @@
       "status": "applied",
       "score": 75,
       "match_percentage": 72,
-      "created_at": "2024-01-27T11:00:00Z",
-      "updated_at": "2024-01-27T11:00:00Z"
+      "created_at": "2028-11-02T11:00:00Z",
+      "updated_at": "2028-11-02T11:00:00Z"
     },
     {
       "id": "app-4",
@@ -418,8 +460,8 @@
       "status": "shortlisted",
       "score": 89,
       "match_percentage": 86,
-      "created_at": "2024-01-28T11:00:00Z",
-      "updated_at": "2024-01-29T10:00:00Z"
+      "created_at": "2028-11-05T11:00:00Z",
+      "updated_at": "2028-11-10T10:00:00Z"
     },
     {
       "id": "app-5",
@@ -428,8 +470,308 @@
       "status": "applied",
       "score": 65,
       "match_percentage": 62,
-      "created_at": "2024-01-29T11:00:00Z",
-      "updated_at": "2024-01-29T11:00:00Z"
+      "created_at": "2028-11-06T11:00:00Z",
+      "updated_at": "2028-11-06T11:00:00Z"
+    },
+    {
+      "id": "app-6",
+      "candidate_id": "candidate-2",
+      "job_id": "job-1",
+      "status": "applied",
+      "score": 78,
+      "match_percentage": 75,
+      "created_at": "2028-11-07T10:00:00Z",
+      "updated_at": "2028-11-07T10:00:00Z"
+    },
+    {
+      "id": "app-7",
+      "candidate_id": "candidate-3",
+      "job_id": "job-1",
+      "status": "shortlisted",
+      "score": 82,
+      "match_percentage": 79,
+      "created_at": "2028-11-08T14:00:00Z",
+      "updated_at": "2028-11-09T09:00:00Z"
+    },
+    {
+      "id": "app-8",
+      "candidate_id": "candidate-4",
+      "job_id": "job-2",
+      "status": "applied",
+      "score": 71,
+      "match_percentage": 68,
+      "created_at": "2028-11-09T11:00:00Z",
+      "updated_at": "2028-11-09T11:00:00Z"
+    },
+    {
+      "id": "app-9",
+      "candidate_id": "candidate-5",
+      "job_id": "job-1",
+      "status": "applied",
+      "score": 69,
+      "match_percentage": 66,
+      "created_at": "2028-11-10T09:00:00Z",
+      "updated_at": "2028-11-10T09:00:00Z"
+    },
+    {
+      "id": "app-10",
+      "candidate_id": "candidate-1",
+      "job_id": "job-2",
+      "status": "shortlisted",
+      "score": 85,
+      "match_percentage": 82,
+      "created_at": "2028-11-11T15:00:00Z",
+      "updated_at": "2028-11-12T10:00:00Z"
+    },
+    {
+      "id": "app-11",
+      "candidate_id": "candidate-2",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 73,
+      "match_percentage": 70,
+      "created_at": "2028-11-12T12:00:00Z",
+      "updated_at": "2028-11-12T12:00:00Z"
+    },
+    {
+      "id": "app-12",
+      "candidate_id": "candidate-3",
+      "job_id": "job-2",
+      "status": "interviewed",
+      "score": 88,
+      "match_percentage": 85,
+      "created_at": "2028-11-13T10:00:00Z",
+      "updated_at": "2028-11-14T14:00:00Z"
+    },
+    {
+      "id": "app-13",
+      "candidate_id": "candidate-4",
+      "job_id": "job-1",
+      "status": "applied",
+      "score": 76,
+      "match_percentage": 73,
+      "created_at": "2028-11-14T11:00:00Z",
+      "updated_at": "2028-11-14T11:00:00Z"
+    },
+    {
+      "id": "app-14",
+      "candidate_id": "candidate-5",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 68,
+      "match_percentage": 65,
+      "created_at": "2028-11-15T09:00:00Z",
+      "updated_at": "2028-11-15T09:00:00Z"
+    },
+    {
+      "id": "app-15",
+      "candidate_id": "candidate-1",
+      "job_id": "job-2",
+      "status": "shortlisted",
+      "score": 90,
+      "match_percentage": 87,
+      "created_at": "2028-11-16T14:00:00Z",
+      "updated_at": "2028-11-17T10:00:00Z"
+    },
+    {
+      "id": "app-16",
+      "candidate_id": "candidate-2",
+      "job_id": "job-1",
+      "status": "applied",
+      "score": 74,
+      "match_percentage": 71,
+      "created_at": "2028-11-17T10:00:00Z",
+      "updated_at": "2028-11-17T10:00:00Z"
+    },
+    {
+      "id": "app-17",
+      "candidate_id": "candidate-3",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 70,
+      "match_percentage": 67,
+      "created_at": "2028-11-18T11:00:00Z",
+      "updated_at": "2028-11-18T11:00:00Z"
+    },
+    {
+      "id": "app-18",
+      "candidate_id": "candidate-4",
+      "job_id": "job-2",
+      "status": "interviewed",
+      "score": 86,
+      "match_percentage": 83,
+      "created_at": "2028-11-19T13:00:00Z",
+      "updated_at": "2028-11-20T09:00:00Z"
+    },
+    {
+      "id": "app-19",
+      "candidate_id": "candidate-5",
+      "job_id": "job-1",
+      "status": "applied",
+      "score": 72,
+      "match_percentage": 69,
+      "created_at": "2028-11-20T10:00:00Z",
+      "updated_at": "2028-11-20T10:00:00Z"
+    },
+    {
+      "id": "app-20",
+      "candidate_id": "candidate-1",
+      "job_id": "job-4",
+      "status": "shortlisted",
+      "score": 84,
+      "match_percentage": 81,
+      "created_at": "2028-11-21T15:00:00Z",
+      "updated_at": "2028-11-22T11:00:00Z"
+    },
+    {
+      "id": "app-21",
+      "candidate_id": "candidate-2",
+      "job_id": "job-2",
+      "status": "applied",
+      "score": 77,
+      "match_percentage": 74,
+      "created_at": "2028-11-22T12:00:00Z",
+      "updated_at": "2028-11-22T12:00:00Z"
+    },
+    {
+      "id": "app-22",
+      "candidate_id": "candidate-3",
+      "job_id": "job-1",
+      "status": "applied",
+      "score": 79,
+      "match_percentage": 76,
+      "created_at": "2028-11-23T09:00:00Z",
+      "updated_at": "2028-11-23T09:00:00Z"
+    },
+    {
+      "id": "app-23",
+      "candidate_id": "candidate-4",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 75,
+      "match_percentage": 72,
+      "created_at": "2028-11-24T14:00:00Z",
+      "updated_at": "2028-11-24T14:00:00Z"
+    },
+    {
+      "id": "app-24",
+      "candidate_id": "candidate-5",
+      "job_id": "job-2",
+      "status": "shortlisted",
+      "score": 81,
+      "match_percentage": 78,
+      "created_at": "2028-11-25T11:00:00Z",
+      "updated_at": "2028-11-26T10:00:00Z"
+    },
+    {
+      "id": "app-25",
+      "candidate_id": "candidate-1",
+      "job_id": "job-1",
+      "status": "interviewed",
+      "score": 91,
+      "match_percentage": 88,
+      "created_at": "2028-11-26T10:00:00Z",
+      "updated_at": "2028-11-26T14:00:00Z"
+    },
+    {
+      "id": "app-26",
+      "candidate_id": "candidate-2",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 80,
+      "match_percentage": 77,
+      "created_at": "2028-11-26T13:00:00Z",
+      "updated_at": "2028-11-26T13:00:00Z"
+    },
+    {
+      "id": "app-27",
+      "candidate_id": "candidate-3",
+      "job_id": "job-2",
+      "status": "applied",
+      "score": 83,
+      "match_percentage": 80,
+      "created_at": "2028-11-26T09:00:00Z",
+      "updated_at": "2028-11-26T09:00:00Z"
+    },
+    {
+      "id": "app-28",
+      "candidate_id": "candidate-4",
+      "job_id": "job-1",
+      "status": "shortlisted",
+      "score": 87,
+      "match_percentage": 84,
+      "created_at": "2028-11-25T15:00:00Z",
+      "updated_at": "2028-11-26T11:00:00Z"
+    },
+    {
+      "id": "app-29",
+      "candidate_id": "candidate-5",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 73,
+      "match_percentage": 70,
+      "created_at": "2028-11-24T12:00:00Z",
+      "updated_at": "2028-11-24T12:00:00Z"
+    },
+    {
+      "id": "app-30",
+      "candidate_id": "candidate-1",
+      "job_id": "job-2",
+      "status": "applied",
+      "score": 76,
+      "match_percentage": 73,
+      "created_at": "2028-11-23T10:00:00Z",
+      "updated_at": "2028-11-23T10:00:00Z"
+    },
+    {
+      "id": "app-31",
+      "candidate_id": "candidate-2",
+      "job_id": "job-1",
+      "status": "applied",
+      "score": 78,
+      "match_percentage": 75,
+      "created_at": "2028-11-22T11:00:00Z",
+      "updated_at": "2028-11-22T11:00:00Z"
+    },
+    {
+      "id": "app-32",
+      "candidate_id": "candidate-3",
+      "job_id": "job-4",
+      "status": "shortlisted",
+      "score": 85,
+      "match_percentage": 82,
+      "created_at": "2028-11-21T14:00:00Z",
+      "updated_at": "2028-11-22T10:00:00Z"
+    },
+    {
+      "id": "app-33",
+      "candidate_id": "candidate-4",
+      "job_id": "job-2",
+      "status": "applied",
+      "score": 74,
+      "match_percentage": 71,
+      "created_at": "2028-11-20T09:00:00Z",
+      "updated_at": "2028-11-20T09:00:00Z"
+    },
+    {
+      "id": "app-34",
+      "candidate_id": "candidate-5",
+      "job_id": "job-1",
+      "status": "interviewed",
+      "score": 89,
+      "match_percentage": 86,
+      "created_at": "2028-11-19T13:00:00Z",
+      "updated_at": "2028-11-20T11:00:00Z"
+    },
+    {
+      "id": "app-35",
+      "candidate_id": "candidate-1",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 71,
+      "match_percentage": 68,
+      "created_at": "2028-11-18T10:00:00Z",
+      "updated_at": "2028-11-18T10:00:00Z"
     }
   ],
   "scores": [
@@ -473,7 +815,7 @@
       "job_id": "job-1",
       "author_id": "user-2",
       "content": "Excellent candidate! Strong technical skills and good communication.",
-      "created_at": "2024-01-26T10:00:00Z"
+      "created_at": "2028-11-02T10:00:00Z"
     },
     {
       "id": "note-2",
@@ -481,7 +823,7 @@
       "job_id": "job-1",
       "author_id": "user-1",
       "content": "Schedule interview for next week.",
-      "created_at": "2024-01-26T14:00:00Z"
+      "created_at": "2028-11-05T14:00:00Z"
     },
     {
       "id": "note-3",
@@ -489,7 +831,63 @@
       "job_id": "job-2",
       "author_id": "user-2",
       "content": "Very experienced backend developer. Perfect match for the role.",
-      "created_at": "2024-01-27T10:00:00Z"
+      "created_at": "2028-11-08T10:00:00Z"
+    },
+    {
+      "id": "note-4",
+      "candidate_id": "candidate-3",
+      "job_id": "job-1",
+      "author_id": "user-1",
+      "content": "Great design portfolio. Should proceed to interview stage.",
+      "created_at": "2028-11-10T14:00:00Z"
+    },
+    {
+      "id": "note-5",
+      "candidate_id": "candidate-4",
+      "job_id": "job-4",
+      "author_id": "user-2",
+      "content": "Strong product management background. Excellent communication skills.",
+      "created_at": "2028-11-12T09:00:00Z"
+    },
+    {
+      "id": "note-6",
+      "candidate_id": "candidate-5",
+      "job_id": "job-1",
+      "author_id": "user-1",
+      "content": "Junior developer but shows great potential. Consider for entry-level position.",
+      "created_at": "2028-11-15T11:00:00Z"
+    },
+    {
+      "id": "note-7",
+      "candidate_id": "candidate-1",
+      "job_id": "job-2",
+      "author_id": "user-3",
+      "content": "Interview scheduled for next Monday at 2 PM.",
+      "created_at": "2028-11-18T10:00:00Z"
+    },
+    {
+      "id": "note-8",
+      "candidate_id": "candidate-2",
+      "job_id": "job-4",
+      "author_id": "user-1",
+      "content": "Reference check completed. All positive feedback.",
+      "created_at": "2028-11-20T15:00:00Z"
+    },
+    {
+      "id": "note-9",
+      "candidate_id": "candidate-3",
+      "job_id": "job-3",
+      "author_id": "user-2",
+      "content": "Design test completed. Results exceeded expectations.",
+      "created_at": "2028-11-22T13:00:00Z"
+    },
+    {
+      "id": "note-10",
+      "candidate_id": "candidate-4",
+      "job_id": "job-1",
+      "author_id": "user-3",
+      "content": "Offer extended. Waiting for candidate response.",
+      "created_at": "2028-11-24T16:00:00Z"
     }
   ],
   "subscriptions": [
@@ -500,13 +898,13 @@
       "stripe_customer_id": "cus_1234567890",
       "plan_name": "professional",
       "status": "active",
-      "current_period_start": "2024-01-01T00:00:00Z",
-      "current_period_end": "2024-02-01T00:00:00Z",
+      "current_period_start": "2028-11-01T00:00:00Z",
+      "current_period_end": "2028-12-01T00:00:00Z",
       "cancel_at_period_end": false,
       "trial_start": null,
       "trial_end": null,
-      "created_at": "2024-01-01T00:00:00Z",
-      "updated_at": "2024-01-15T10:00:00Z"
+      "created_at": "2028-01-01T00:00:00Z",
+      "updated_at": "2028-11-20T10:00:00Z"
     }
   ],
   "usage_metrics": [
@@ -515,27 +913,27 @@
       "company_id": "company-1",
       "metric_type": "cv_upload",
       "metric_value": 45,
-      "period_start": "2024-01-01T00:00:00Z",
-      "period_end": "2024-02-01T00:00:00Z",
-      "created_at": "2024-01-25T10:00:00Z"
+      "period_start": "2028-11-01T00:00:00Z",
+      "period_end": "2028-12-01T00:00:00Z",
+      "created_at": "2028-11-25T10:00:00Z"
     },
     {
       "id": "metric-2",
       "company_id": "company-1",
       "metric_type": "job_created",
       "metric_value": 4,
-      "period_start": "2024-01-01T00:00:00Z",
-      "period_end": "2024-02-01T00:00:00Z",
-      "created_at": "2024-01-23T10:00:00Z"
+      "period_start": "2028-11-01T00:00:00Z",
+      "period_end": "2028-12-01T00:00:00Z",
+      "created_at": "2028-11-23T10:00:00Z"
     },
     {
       "id": "metric-3",
       "company_id": "company-1",
       "metric_type": "user_added",
       "metric_value": 3,
-      "period_start": "2024-01-01T00:00:00Z",
-      "period_end": "2024-02-01T00:00:00Z",
-      "created_at": "2024-01-17T10:00:00Z"
+      "period_start": "2028-11-01T00:00:00Z",
+      "period_end": "2028-12-01T00:00:00Z",
+      "created_at": "2028-11-17T10:00:00Z"
     }
   ]
 }
