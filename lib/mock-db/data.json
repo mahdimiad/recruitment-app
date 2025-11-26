@@ -1,0 +1,542 @@
+{
+  "companies": [
+    {
+      "id": "company-1",
+      "name": "TechGlobal Inc.",
+      "logo_url": null,
+      "subscription_tier": "professional",
+      "deployment_type": "cloud",
+      "license_key": null,
+      "license_expires_at": null,
+      "max_users": 50,
+      "max_jobs": 1000,
+      "max_cv_uploads_per_month": 1000,
+      "storage_limit_gb": 100,
+      "created_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "company-2",
+      "name": "FinanceGroup",
+      "logo_url": null,
+      "subscription_tier": "enterprise",
+      "deployment_type": "cloud",
+      "license_key": null,
+      "license_expires_at": null,
+      "max_users": 200,
+      "max_jobs": 5000,
+      "max_cv_uploads_per_month": 5000,
+      "storage_limit_gb": 500,
+      "created_at": "2024-02-01T10:00:00Z",
+      "updated_at": "2024-02-01T10:00:00Z"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "user-1",
+      "email": "john.smith@techglobal.com",
+      "full_name": "John Smith",
+      "avatar_url": null,
+      "company_id": "company-1",
+      "role": "admin",
+      "created_at": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "user-2",
+      "email": "jane.doe@techglobal.com",
+      "full_name": "Jane Doe",
+      "avatar_url": null,
+      "company_id": "company-1",
+      "role": "recruiter",
+      "created_at": "2024-01-16T10:00:00Z"
+    },
+    {
+      "id": "user-3",
+      "email": "mike.johnson@techglobal.com",
+      "full_name": "Mike Johnson",
+      "avatar_url": null,
+      "company_id": "company-1",
+      "role": "recruiter",
+      "created_at": "2024-01-17T10:00:00Z"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-1",
+      "company_id": "company-1",
+      "title": "Senior Frontend Developer",
+      "description": "We are looking for an experienced Frontend Developer to join our team. You will be responsible for building user interfaces using React and Next.js.",
+      "location": "San Francisco, CA",
+      "job_type": "full-time",
+      "salary_min": 120000,
+      "salary_max": 180000,
+      "status": "published",
+      "created_by": "user-1",
+      "created_at": "2024-01-20T10:00:00Z",
+      "updated_at": "2024-01-20T10:00:00Z"
+    },
+    {
+      "id": "job-2",
+      "company_id": "company-1",
+      "title": "Backend Developer",
+      "description": "Join our backend team to build scalable APIs and services using Node.js and PostgreSQL.",
+      "location": "Remote",
+      "job_type": "full-time",
+      "salary_min": 110000,
+      "salary_max": 160000,
+      "status": "published",
+      "created_by": "user-1",
+      "created_at": "2024-01-21T10:00:00Z",
+      "updated_at": "2024-01-21T10:00:00Z"
+    },
+    {
+      "id": "job-3",
+      "company_id": "company-1",
+      "title": "UX Designer",
+      "description": "We need a creative UX Designer to design beautiful and intuitive user experiences.",
+      "location": "New York, NY",
+      "job_type": "full-time",
+      "salary_min": 90000,
+      "salary_max": 130000,
+      "status": "draft",
+      "created_by": "user-2",
+      "created_at": "2024-01-22T10:00:00Z",
+      "updated_at": "2024-01-22T10:00:00Z"
+    },
+    {
+      "id": "job-4",
+      "company_id": "company-1",
+      "title": "Product Manager",
+      "description": "Lead product development and work with cross-functional teams to deliver great products.",
+      "location": "Austin, TX",
+      "job_type": "full-time",
+      "salary_min": 130000,
+      "salary_max": 180000,
+      "status": "published",
+      "created_by": "user-1",
+      "created_at": "2024-01-23T10:00:00Z",
+      "updated_at": "2024-01-23T10:00:00Z"
+    }
+  ],
+  "job_requirements": [
+    {
+      "id": "req-1",
+      "job_id": "job-1",
+      "skill": "React",
+      "weight": 0.4,
+      "required": true
+    },
+    {
+      "id": "req-2",
+      "job_id": "job-1",
+      "skill": "TypeScript",
+      "weight": 0.3,
+      "required": true
+    },
+    {
+      "id": "req-3",
+      "job_id": "job-1",
+      "skill": "Next.js",
+      "weight": 0.2,
+      "required": false
+    },
+    {
+      "id": "req-4",
+      "job_id": "job-1",
+      "skill": "Tailwind CSS",
+      "weight": 0.1,
+      "required": false
+    },
+    {
+      "id": "req-5",
+      "job_id": "job-2",
+      "skill": "Node.js",
+      "weight": 0.4,
+      "required": true
+    },
+    {
+      "id": "req-6",
+      "job_id": "job-2",
+      "skill": "PostgreSQL",
+      "weight": 0.3,
+      "required": true
+    },
+    {
+      "id": "req-7",
+      "job_id": "job-2",
+      "skill": "TypeScript",
+      "weight": 0.2,
+      "required": false
+    },
+    {
+      "id": "req-8",
+      "job_id": "job-2",
+      "skill": "REST API",
+      "weight": 0.1,
+      "required": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate-1",
+      "company_id": "company-1",
+      "full_name": "Emma Wilson",
+      "email": "emma.wilson@email.com",
+      "phone": "+1-555-0101",
+      "cv_file_url": "/cvs/emma-wilson.pdf",
+      "parsed_data": {
+        "experience_years": 5,
+        "education": [
+          {
+            "degree": "Bachelor of Science",
+            "field": "Computer Science",
+            "university": "MIT",
+            "year": 2019
+          }
+        ],
+        "summary": "Experienced frontend developer with 5+ years building React applications"
+      },
+      "created_at": "2024-01-25T10:00:00Z",
+      "updated_at": "2024-01-25T10:00:00Z"
+    },
+    {
+      "id": "candidate-2",
+      "company_id": "company-1",
+      "full_name": "David Chen",
+      "email": "david.chen@email.com",
+      "phone": "+1-555-0102",
+      "cv_file_url": "/cvs/david-chen.pdf",
+      "parsed_data": {
+        "experience_years": 7,
+        "education": [
+          {
+            "degree": "Master of Science",
+            "field": "Software Engineering",
+            "university": "Stanford University",
+            "year": 2017
+          }
+        ],
+        "summary": "Senior backend engineer specializing in scalable systems"
+      },
+      "created_at": "2024-01-26T10:00:00Z",
+      "updated_at": "2024-01-26T10:00:00Z"
+    },
+    {
+      "id": "candidate-3",
+      "company_id": "company-1",
+      "full_name": "Sarah Martinez",
+      "email": "sarah.martinez@email.com",
+      "phone": "+1-555-0103",
+      "cv_file_url": "/cvs/sarah-martinez.pdf",
+      "parsed_data": {
+        "experience_years": 4,
+        "education": [
+          {
+            "degree": "Bachelor of Arts",
+            "field": "Design",
+            "university": "Art Center College of Design",
+            "year": 2020
+          }
+        ],
+        "summary": "Creative UX/UI designer with expertise in user research and prototyping"
+      },
+      "created_at": "2024-01-27T10:00:00Z",
+      "updated_at": "2024-01-27T10:00:00Z"
+    },
+    {
+      "id": "candidate-4",
+      "company_id": "company-1",
+      "full_name": "Robert Taylor",
+      "email": "robert.taylor@email.com",
+      "phone": "+1-555-0104",
+      "cv_file_url": "/cvs/robert-taylor.pdf",
+      "parsed_data": {
+        "experience_years": 6,
+        "education": [
+          {
+            "degree": "Master of Business Administration",
+            "field": "Product Management",
+            "university": "Harvard Business School",
+            "year": 2018
+          }
+        ],
+        "summary": "Product manager with experience launching successful SaaS products"
+      },
+      "created_at": "2024-01-28T10:00:00Z",
+      "updated_at": "2024-01-28T10:00:00Z"
+    },
+    {
+      "id": "candidate-5",
+      "company_id": "company-1",
+      "full_name": "Lisa Anderson",
+      "email": "lisa.anderson@email.com",
+      "phone": "+1-555-0105",
+      "cv_file_url": "/cvs/lisa-anderson.pdf",
+      "parsed_data": {
+        "experience_years": 3,
+        "education": [
+          {
+            "degree": "Bachelor of Science",
+            "field": "Computer Science",
+            "university": "UC Berkeley",
+            "year": 2021
+          }
+        ],
+        "summary": "Frontend developer passionate about building accessible web applications"
+      },
+      "created_at": "2024-01-29T10:00:00Z",
+      "updated_at": "2024-01-29T10:00:00Z"
+    }
+  ],
+  "candidate_skills": [
+    {
+      "id": "skill-1",
+      "candidate_id": "candidate-1",
+      "skill": "React",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-2",
+      "candidate_id": "candidate-1",
+      "skill": "TypeScript",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-3",
+      "candidate_id": "candidate-1",
+      "skill": "Next.js",
+      "proficiency": "intermediate"
+    },
+    {
+      "id": "skill-4",
+      "candidate_id": "candidate-1",
+      "skill": "Tailwind CSS",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-5",
+      "candidate_id": "candidate-2",
+      "skill": "Node.js",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-6",
+      "candidate_id": "candidate-2",
+      "skill": "PostgreSQL",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-7",
+      "candidate_id": "candidate-2",
+      "skill": "TypeScript",
+      "proficiency": "intermediate"
+    },
+    {
+      "id": "skill-8",
+      "candidate_id": "candidate-2",
+      "skill": "REST API",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-9",
+      "candidate_id": "candidate-3",
+      "skill": "Figma",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-10",
+      "candidate_id": "candidate-3",
+      "skill": "User Research",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-11",
+      "candidate_id": "candidate-3",
+      "skill": "Prototyping",
+      "proficiency": "intermediate"
+    },
+    {
+      "id": "skill-12",
+      "candidate_id": "candidate-4",
+      "skill": "Product Strategy",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-13",
+      "candidate_id": "candidate-4",
+      "skill": "Agile",
+      "proficiency": "advanced"
+    },
+    {
+      "id": "skill-14",
+      "candidate_id": "candidate-5",
+      "skill": "React",
+      "proficiency": "intermediate"
+    },
+    {
+      "id": "skill-15",
+      "candidate_id": "candidate-5",
+      "skill": "JavaScript",
+      "proficiency": "advanced"
+    }
+  ],
+  "applications": [
+    {
+      "id": "app-1",
+      "candidate_id": "candidate-1",
+      "job_id": "job-1",
+      "status": "shortlisted",
+      "score": 87,
+      "match_percentage": 83,
+      "created_at": "2024-01-25T11:00:00Z",
+      "updated_at": "2024-01-26T10:00:00Z"
+    },
+    {
+      "id": "app-2",
+      "candidate_id": "candidate-2",
+      "job_id": "job-2",
+      "status": "interviewed",
+      "score": 92,
+      "match_percentage": 91,
+      "created_at": "2024-01-26T11:00:00Z",
+      "updated_at": "2024-01-27T10:00:00Z"
+    },
+    {
+      "id": "app-3",
+      "candidate_id": "candidate-3",
+      "job_id": "job-3",
+      "status": "applied",
+      "score": 75,
+      "match_percentage": 72,
+      "created_at": "2024-01-27T11:00:00Z",
+      "updated_at": "2024-01-27T11:00:00Z"
+    },
+    {
+      "id": "app-4",
+      "candidate_id": "candidate-4",
+      "job_id": "job-4",
+      "status": "shortlisted",
+      "score": 89,
+      "match_percentage": 86,
+      "created_at": "2024-01-28T11:00:00Z",
+      "updated_at": "2024-01-29T10:00:00Z"
+    },
+    {
+      "id": "app-5",
+      "candidate_id": "candidate-1",
+      "job_id": "job-4",
+      "status": "applied",
+      "score": 65,
+      "match_percentage": 62,
+      "created_at": "2024-01-29T11:00:00Z",
+      "updated_at": "2024-01-29T11:00:00Z"
+    }
+  ],
+  "scores": [
+    {
+      "id": "score-1",
+      "application_id": "app-1",
+      "criteria": "Skills Match",
+      "score": 35,
+      "max_score": 40,
+      "notes": "Strong React and TypeScript skills"
+    },
+    {
+      "id": "score-2",
+      "application_id": "app-1",
+      "criteria": "Experience Match",
+      "score": 26,
+      "max_score": 30,
+      "notes": "5 years of relevant experience"
+    },
+    {
+      "id": "score-3",
+      "application_id": "app-1",
+      "criteria": "Education Match",
+      "score": 18,
+      "max_score": 20,
+      "notes": "Computer Science degree from top university"
+    },
+    {
+      "id": "score-4",
+      "application_id": "app-1",
+      "criteria": "Other",
+      "score": 8,
+      "max_score": 10,
+      "notes": "Good cultural fit"
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-1",
+      "candidate_id": "candidate-1",
+      "job_id": "job-1",
+      "author_id": "user-2",
+      "content": "Excellent candidate! Strong technical skills and good communication.",
+      "created_at": "2024-01-26T10:00:00Z"
+    },
+    {
+      "id": "note-2",
+      "candidate_id": "candidate-1",
+      "job_id": "job-1",
+      "author_id": "user-1",
+      "content": "Schedule interview for next week.",
+      "created_at": "2024-01-26T14:00:00Z"
+    },
+    {
+      "id": "note-3",
+      "candidate_id": "candidate-2",
+      "job_id": "job-2",
+      "author_id": "user-2",
+      "content": "Very experienced backend developer. Perfect match for the role.",
+      "created_at": "2024-01-27T10:00:00Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub-1",
+      "company_id": "company-1",
+      "stripe_subscription_id": "sub_1234567890",
+      "stripe_customer_id": "cus_1234567890",
+      "plan_name": "professional",
+      "status": "active",
+      "current_period_start": "2024-01-01T00:00:00Z",
+      "current_period_end": "2024-02-01T00:00:00Z",
+      "cancel_at_period_end": false,
+      "trial_start": null,
+      "trial_end": null,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z"
+    }
+  ],
+  "usage_metrics": [
+    {
+      "id": "metric-1",
+      "company_id": "company-1",
+      "metric_type": "cv_upload",
+      "metric_value": 45,
+      "period_start": "2024-01-01T00:00:00Z",
+      "period_end": "2024-02-01T00:00:00Z",
+      "created_at": "2024-01-25T10:00:00Z"
+    },
+    {
+      "id": "metric-2",
+      "company_id": "company-1",
+      "metric_type": "job_created",
+      "metric_value": 4,
+      "period_start": "2024-01-01T00:00:00Z",
+      "period_end": "2024-02-01T00:00:00Z",
+      "created_at": "2024-01-23T10:00:00Z"
+    },
+    {
+      "id": "metric-3",
+      "company_id": "company-1",
+      "metric_type": "user_added",
+      "metric_value": 3,
+      "period_start": "2024-01-01T00:00:00Z",
+      "period_end": "2024-02-01T00:00:00Z",
+      "created_at": "2024-01-17T10:00:00Z"
+    }
+  ]
+}
+
