@@ -12,32 +12,21 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
-interface ApplicationStatusData {
-  status: string
-  count: number
+interface TopJobData {
+  jobTitle: string
+  applicants: number
 }
 
-interface ApplicationStatusChartProps {
-  data: ApplicationStatusData[]
+interface TopJobsChartProps {
+  data: TopJobData[]
 }
 
-export default function ApplicationStatusChart({ data }: ApplicationStatusChartProps) {
-  const chartData = data.map((item, index) => ({
-    ...item,
-    fill: `rgba(16, 185, 129, ${0.4 + (index * 0.1)})`, // Increasing opacity
-    fillOpacity: 0.4 + (index * 0.1),
-  }))
-
-  // Format status labels for display
-  const formatStatus = (status: string) => {
-    return status.charAt(0).toUpperCase() + status.slice(1)
-  }
-
+export default function TopJobsChart({ data }: TopJobsChartProps) {
   return (
     <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
       <div className="p-4 border-b border-gray-700">
         <div className="flex justify-between items-center">
-          <h3 className="text-lg font-medium text-white">Application Status</h3>
+          <h3 className="text-lg font-medium text-white">Top 5 Job Positions</h3>
           <button className="text-sm text-gray-400 hover:text-white">
             <FontAwesomeIcon icon={faEllipsisV} className="h-4 w-4" />
           </button>
@@ -46,24 +35,19 @@ export default function ApplicationStatusChart({ data }: ApplicationStatusChartP
       <div className="p-4">
         <div style={{ height: '300px', width: '100%' }}>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={chartData}
-              layout="vertical"
-              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-            >
+            <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
               <XAxis
-                type="number"
+                dataKey="jobTitle"
                 stroke="#9CA3AF"
                 style={{ fontSize: '12px' }}
+                angle={-45}
+                textAnchor="end"
+                height={80}
               />
               <YAxis
-                type="category"
-                dataKey="status"
                 stroke="#9CA3AF"
                 style={{ fontSize: '12px' }}
-                width={100}
-                tickFormatter={formatStatus}
               />
               <Tooltip
                 contentStyle={{
@@ -72,9 +56,9 @@ export default function ApplicationStatusChart({ data }: ApplicationStatusChartP
                   borderRadius: '8px',
                   color: '#E5E7EB',
                 }}
-                cursor={{ fill: 'rgba(16, 185, 129, 0.1)' }}
+                cursor={{ fill: 'rgba(79, 70, 229, 0.1)' }}
               />
-              <Bar dataKey="count" radius={[0, 4, 4, 0]} stroke="#10b981" strokeWidth={1} />
+              <Bar dataKey="applicants" fill="#4f46e5" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

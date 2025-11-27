@@ -623,38 +623,36 @@ export async function getHiringFunnelData(
     }
   }
 
-  // Count by status
-  const applied = filteredApplications.length
-  const screened = filteredApplications.filter(app => app.status !== 'applied').length
-  const shortlisted = filteredApplications.filter(app => app.status === 'shortlisted' || app.status === 'interviewed' || app.status === 'offered' || app.status === 'hired').length
-  const interviewed = filteredApplications.filter(app => app.status === 'interviewed' || app.status === 'offered' || app.status === 'hired').length
-  const offered = filteredApplications.filter(app => app.status === 'offered' || app.status === 'hired').length
-  const hired = filteredApplications.filter(app => app.status === 'hired').length
+  // Count by application status
+  const statusCounts: Record<string, number> = {}
+  
+  filteredApplications.forEach(app => {
+    const status = app.status
+    statusCounts[status] = (statusCounts[status] || 0) + 1
+  })
 
-  // Ensure we always return data (fallback to sample data if all counts are 0)
-  const funnelData = [
-    { stage: 'Applied', count: applied },
-    { stage: 'Screened', count: screened },
-    { stage: 'Shortlisted', count: shortlisted },
-    { stage: 'Interviewed', count: interviewed },
-    { stage: 'Offered', count: offered },
-    { stage: 'Hired', count: hired },
-  ]
+  // Define status order for display
+  const statusOrder = ['applied', 'shortlisted', 'interviewed', 'rejected', 'hired']
+  
+  // Build data array with status counts
+  const statusData = statusOrder
+    .filter(status => statusCounts[status] > 0)
+    .map(status => ({
+      status: status,
+      count: statusCounts[status] || 0,
+    }))
 
-  // If all counts are 0, return sample data to show the chart structure
-  const totalCount = funnelData.reduce((sum, item) => sum + item.count, 0)
-  if (totalCount === 0) {
+  // If no data, return sample data to show the chart structure
+  if (statusData.length === 0) {
     return [
-      { stage: 'Applied', count: companyApplications.length || 35 },
-      { stage: 'Screened', count: Math.floor((companyApplications.length || 35) * 0.64) },
-      { stage: 'Shortlisted', count: Math.floor((companyApplications.length || 35) * 0.29) },
-      { stage: 'Interviewed', count: Math.floor((companyApplications.length || 35) * 0.12) },
-      { stage: 'Offered', count: Math.floor((companyApplications.length || 35) * 0.07) },
-      { stage: 'Hired', count: Math.floor((companyApplications.length || 35) * 0.05) },
+      { status: 'applied', count: companyApplications.length || 20 },
+      { status: 'shortlisted', count: Math.floor((companyApplications.length || 20) * 0.3) },
+      { status: 'interviewed', count: Math.floor((companyApplications.length || 20) * 0.15) },
+      { status: 'hired', count: Math.floor((companyApplications.length || 20) * 0.05) },
     ]
   }
 
-  return funnelData
+  return statusData
 }
 
 /**
@@ -688,6 +686,180 @@ export async function getTopCandidates(companyId: string, limit: number = 5) {
   return candidatesWithScores
     .sort((a, b) => b.averageScore - a.averageScore)
     .slice(0, limit)
+}
+
+/**
+ * Get reports statistics (different from dashboard stats)
+ */
+export async function getReportsStats(
+  companyId: string,
+  dateRange?: { startDate: Date; endDate: Date }
+) {
+  await delay(150)
+  
+  const candidates = await getCandidatesByCompany(companyId)
+  const applications = await getApplications()
+  const jobs = await getJobsByCompany(companyId)
+  
+  let companyApplications = applications.filter(app => {
+    const job = jobs.find(j => j.id === app.job_id)
+    return job?.company_id === companyId
+  })
+
+  // Filter by date range if provided
+  if (dateRange) {
+    companyApplications = companyApplications.filter(app => {
+      const appDate = new Date(app.created_at)
+      return appDate >= dateRange.startDate && appDate <= dateRange.endDate
+    })
+  }
+
+  const shortlisted = companyApplications.filter(a => a.status === 'shortlisted').length
+  const hired = companyApplications.filter(a => a.status === 'hired').length
+  
+  // Calculate average score for top 10% of candidates
+  const allScores = companyApplications.map(a => a.score).sort((a, b) => b - a)
+  const top10PercentCount = Math.max(1, Math.floor(allScores.length * 0.1))
+  const topScores = allScores.slice(0, top10PercentCount)
+  const avgScore = topScores.length > 0
+    ? Math.round((topScores.reduce((sum, score) => sum + score, 0) / topScores.length) * 10) / 10
+    : 0
+
+  // Calculate average time to hire (mock calculation)
+  const hiredApplications = companyApplications.filter(a => a.status === 'hired')
+  const avgTimeToHire = hiredApplications.length > 0
+    ? Math.round((hiredApplications.length * 18.2) / hiredApplications.length * 10) / 10
+    : 18.2
+
+  // Mock percentage increases
+  const cvIncrease = 12
+  const shortlistedIncrease = 8
+  const scoreIncrease = 3.2
+  const timeImprovement = 2.4
+  const hiredChange = 0 // Same as last period
+
+  return {
+    totalCVs: candidates.length,
+    shortlisted,
+    hired,
+    avgScore,
+    avgTimeToHire,
+    cvIncrease,
+    shortlistedIncrease,
+    scoreIncrease,
+    timeImprovement,
+    hiredChange,
+  }
+}
+
+/**
+ * Get top jobs by number of applicants
+ */
+export async function getTopJobsData(
+  companyId: string,
+  dateRange?: { startDate: Date; endDate: Date }
+) {
+  await delay(150)
+  
+  const jobs = await getJobsByCompany(companyId)
+  const applications = await getApplications()
+  
+  let companyApplications = applications.filter(app => {
+    const job = jobs.find(j => j.id === app.job_id)
+    return job?.company_id === companyId
+  })
+
+  // Filter by date range if provided
+  if (dateRange) {
+    companyApplications = companyApplications.filter(app => {
+      const appDate = new Date(app.created_at)
+      return appDate >= dateRange.startDate && appDate <= dateRange.endDate
+    })
+  }
+
+  // Count applications per job
+  const jobCounts: Record<string, number> = {}
+  companyApplications.forEach(app => {
+    jobCounts[app.job_id] = (jobCounts[app.job_id] || 0) + 1
+  })
+
+  // Get top 5 jobs
+  const topJobs = Object.entries(jobCounts)
+    .map(([jobId, count]) => {
+      const job = jobs.find(j => j.id === jobId)
+      return {
+        jobTitle: job?.title || 'Unknown Job',
+        applicants: count,
+      }
+    })
+    .sort((a, b) => b.applicants - a.applicants)
+    .slice(0, 5)
+
+  // If we have fewer than 5 jobs, pad with sample data
+  if (topJobs.length < 5) {
+    const sampleJobs = [
+      { jobTitle: 'Frontend Developer', applicants: 124 },
+      { jobTitle: 'Backend Developer', applicants: 98 },
+      { jobTitle: 'UX Designer', applicants: 87 },
+      { jobTitle: 'Product Manager', applicants: 54 },
+      { jobTitle: 'DevOps Engineer', applicants: 42 },
+    ]
+    
+    // Merge real data with sample data, avoiding duplicates
+    const existingTitles = new Set(topJobs.map(j => j.jobTitle))
+    const additionalJobs = sampleJobs
+      .filter(j => !existingTitles.has(j.jobTitle))
+      .slice(0, 5 - topJobs.length)
+    
+    return [...topJobs, ...additionalJobs].slice(0, 5)
+  }
+
+  return topJobs
+}
+
+/**
+ * Get CV upload trend data (monthly for current year and last year)
+ */
+export async function getCVUploadTrendData(companyId: string) {
+  await delay(150)
+  
+  const candidates = await getCandidatesByCompany(companyId)
+  
+  // Group candidates by month for current year (2025)
+  const currentYear = 2025
+  const lastYear = 2024
+  
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  
+  const thisYearData: Record<string, number> = {}
+  const lastYearData: Record<string, number> = {}
+  
+  months.forEach((_, index) => {
+    thisYearData[index] = 0
+    lastYearData[index] = 0
+  })
+  
+  candidates.forEach(candidate => {
+    const createdDate = new Date(candidate.created_at)
+    const year = createdDate.getFullYear()
+    const month = createdDate.getMonth()
+    
+    if (year === currentYear) {
+      thisYearData[month] = (thisYearData[month] || 0) + 1
+    } else if (year === lastYear) {
+      lastYearData[month] = (lastYearData[month] || 0) + 1
+    }
+  })
+  
+  // Generate trend data with some growth
+  const baseValues = [320, 345, 375, 392, 420, 450, 475, 490, 505, 535, 567, 592]
+  const lastYearValues = [280, 290, 310, 315, 340, 360, 380, 390, 410, 430, 448, 460]
+  
+  return months.map((month, index) => ({
+    month,
+    thisYear: thisYearData[index] || baseValues[index] || 0,
+    lastYear: lastYearData[index] || lastYearValues[index] || 0,
+  }))
 }
 
 /**

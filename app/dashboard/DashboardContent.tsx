@@ -19,7 +19,7 @@ import JobStatusChart from '@/components/dashboard/JobStatusChart'
 import RecentJobs from '@/components/dashboard/RecentJobs'
 import TopCandidates from '@/components/dashboard/TopCandidates'
 import ScoreDistributionChart from '@/components/dashboard/ScoreDistributionChart'
-import HiringFunnelChart from '@/components/dashboard/HiringFunnelChart'
+import ApplicationStatusChart from '@/components/dashboard/HiringFunnelChart'
 import DashboardPeriodSelector from '@/components/dashboard/DashboardPeriodSelector'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -184,10 +184,10 @@ export default function DashboardContent() {
           />
         </div>
 
-        {/* Score Distribution and Hiring Funnel Charts */}
+        {/* Score Distribution and Application Status Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <ScoreDistributionChart data={dashboardData.scoreDistributionData} />
-          <HiringFunnelChart data={dashboardData.hiringFunnelData} />
+          <ApplicationStatusChart data={dashboardData.hiringFunnelData} />
         </div>
 
         {/* Charts Row */}

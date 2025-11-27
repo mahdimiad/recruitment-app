@@ -20,13 +20,16 @@ export default function JobStatusChart({ data }: JobStatusChartProps) {
       <div className="px-4 py-5 sm:p-6">
         <h3 className="text-lg font-medium text-white mb-4">Job Status Distribution</h3>
       <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
-          <Pie
-            data={data}
+          <PieChart>
+            <Pie
+              data={data as any}
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+            label={(props: any) => {
+              const { name, percent } = props
+              return `${name || ''} ${percent ? (percent * 100).toFixed(0) : 0}%`
+            }}
             outerRadius={80}
             fill="#8884d8"
             dataKey="value"
