@@ -1,6 +1,6 @@
 <div align="center">
 
-![Talenust Banner](./public/images/Talentustbanner.png)
+<img src="./public/images/Talentustbanner.png" alt="Talenust Banner" style="border-radius: 12px; max-width: 100%; height: auto;" />
 
 # 🎯 Talenust - Modern Recruitment Platform
 
@@ -476,7 +476,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ by [Mahdi Miad](https://github.com/yourusername)**
+**Made with ❤️ by [Mahdi Miad](https://github.com/mahdimiad)**
 
 [⬆ Back to Top](#-talenust---modern-recruitment-platform)
 
