@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "type-check": "tsc --noEmit",
+    "build:analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",

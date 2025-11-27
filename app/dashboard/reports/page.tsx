@@ -132,7 +132,9 @@ export default function ReportsPage() {
 
   const handleExport = (format: 'pdf' | 'csv' | 'email') => {
     // Placeholder for export functionality
-    console.log(`Exporting as ${format}`)
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`Exporting as ${format}`)
+    }
     setShowExportDropdown(false)
     alert(`Export as ${format.toUpperCase()} functionality will be implemented`)
   }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,7 +24,7 @@ interface CandidateWithDetails extends Candidate {
   matchPercentage?: number
 }
 
-export default function CandidatesPage() {
+function CandidatesPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const jobId = searchParams.get('jobId')
@@ -653,6 +653,22 @@ export default function CandidatesPage() {
         </div>
       </div>
     </>
+  )
+}
+
+export default function CandidatesPage() {
+  return (
+    <Suspense fallback={
+      <div className="px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center h-64">
+            <p className="text-gray-400">Loading...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <CandidatesPageContent />
+    </Suspense>
   )
 }
 
