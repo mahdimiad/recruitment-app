@@ -711,3 +711,70 @@ export async function getRecentJobs(companyId: string, limit: number = 5) {
     })
 }
 
+/**
+ * Create a new job
+ * Note: In mock mode, this simulates creation but doesn't persist to JSON file
+ * In production, this will save to Supabase
+ */
+export async function createJob(jobData: {
+  company_id: string
+  title: string
+  description: string
+  location: string
+  job_type: 'full-time' | 'part-time' | 'contract'
+  salary_min?: number
+  salary_max?: number
+  status: 'draft' | 'published' | 'closed'
+  created_by: string
+}): Promise<Database['jobs'][0]> {
+  await delay(200) // Simulate network delay
+  
+  const newJob: Database['jobs'][0] = {
+    id: `job-${Date.now()}`,
+    company_id: jobData.company_id,
+    title: jobData.title,
+    description: jobData.description,
+    location: jobData.location,
+    job_type: jobData.job_type,
+    salary_min: jobData.salary_min || 0,
+    salary_max: jobData.salary_max || 0,
+    status: jobData.status,
+    created_by: jobData.created_by,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  }
+  
+  // In mock mode, we don't actually add to the JSON file
+  // In production, this would be: await supabase.from('jobs').insert(newJob)
+  
+  return newJob
+}
+
+/**
+ * Update an existing job
+ * Note: In mock mode, this simulates update but doesn't persist to JSON file
+ * In production, this will update in Supabase
+ */
+export async function updateJob(
+  jobId: string,
+  updates: Partial<Database['jobs'][0]>
+): Promise<Database['jobs'][0] | null> {
+  await delay(200)
+  
+  const job = await getJobById(jobId)
+  if (!job) {
+    return null
+  }
+  
+  const updatedJob: Database['jobs'][0] = {
+    ...job,
+    ...updates,
+    updated_at: new Date().toISOString(),
+  }
+  
+  // In mock mode, we don't actually update the JSON file
+  // In production, this would be: await supabase.from('jobs').update(updates).eq('id', jobId)
+  
+  return updatedJob
+}
+

@@ -3,13 +3,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { isLoggedIn, logout as authLogout } from '@/lib/utils/auth'
+import { clsx } from 'clsx'
 
 export default function Navigation() {
   const router = useRouter()
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [loggedIn, setLoggedIn] = useState(false)
 
@@ -84,10 +86,15 @@ export default function Navigation() {
                 About
               </Link>
               <Link
-                href="/dashboard"
-                className="border-transparent text-gray-300 hover:border-primary-300 hover:text-primary-400 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                href="/jobs"
+                className={clsx(
+                  'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors',
+                  pathname === '/jobs' || pathname?.startsWith('/jobs/')
+                    ? 'border-primary-400 text-primary-400'
+                    : 'border-transparent text-gray-300 hover:border-primary-300 hover:text-primary-400'
+                )}
               >
-                Dashboard
+                Jobs
               </Link>
             </div>
           </div>
@@ -157,11 +164,16 @@ export default function Navigation() {
               Testimonials
             </Link>
             <Link
-              href="/dashboard"
-              className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-primary-400 hover:bg-gray-700"
+              href="/jobs"
+              className={clsx(
+                'block px-3 py-2 text-base font-medium hover:bg-gray-700',
+                pathname === '/jobs' || pathname?.startsWith('/jobs/')
+                  ? 'text-primary-400 bg-gray-700'
+                  : 'text-gray-300 hover:text-primary-400'
+              )}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Dashboard
+              Jobs
             </Link>
             <div className="pt-4 pb-3 border-t border-gray-700">
               {loggedIn ? (

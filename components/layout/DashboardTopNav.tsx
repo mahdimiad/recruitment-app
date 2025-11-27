@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -95,17 +96,28 @@ export default function DashboardTopNav() {
     <>
       {/* Top Navigation */}
       <nav className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center">
-                <Link href="/dashboard" className="text-green-400 text-xl font-bold">
-                  Talenust
+              <div className="flex-shrink-0">
+                <Link href="/dashboard" className="flex items-center">
+                  <Image
+                    src="/images/talentust_logo.png"
+                    alt="Talenust Logo"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto"
+                    priority
+                  />
                 </Link>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 {navigation.map((item) => {
-                  const isActive = pathname === item.href || pathname?.startsWith(item.href + '/')
+                  // For Dashboard, only match exact path. For others, match path or sub-paths
+                  const isActive = item.href === '/dashboard'
+                    ? pathname === item.href
+                    : pathname === item.href || pathname?.startsWith(item.href + '/')
                   return (
                     <Link
                       key={item.name}
@@ -184,56 +196,63 @@ export default function DashboardTopNav() {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="sm:hidden border-t border-gray-700">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => {
-                const isActive = pathname === item.href || pathname?.startsWith(item.href + '/')
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={clsx(
-                      'block px-3 py-2 rounded-md text-base font-medium',
-                      isActive
-                        ? 'bg-gray-700 text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              })}
-            </div>
-            {userProfile && (
-              <div className="px-4 py-3 border-t border-gray-700">
-                <div className="flex items-center">
-                  {userProfile.avatar_url ? (
-                    <img
-                      className="h-8 w-8 rounded-full"
-                      src={userProfile.avatar_url}
-                      alt={userProfile.full_name}
-                    />
-                  ) : (
-                    <div className="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center">
-                      <FontAwesomeIcon icon={faUserCircle} className="h-5 w-5 text-gray-400" />
-                    </div>
-                  )}
-                  <div className="ml-3 flex-1">
-                    <p className="text-sm font-medium text-white">{userProfile.full_name}</p>
-                    <p className="text-xs text-gray-400">{userProfile.email}</p>
-                  </div>
-                  <button
-                    onClick={handleLogout}
-                    className="ml-2 text-gray-400 hover:text-white"
-                    aria-label="Logout"
-                  >
-                    <FontAwesomeIcon icon={faSignOutAlt} className="h-5 w-5" />
-                  </button>
+            <div className="px-4 sm:px-6 lg:px-8">
+              <div className="max-w-7xl mx-auto">
+                <div className="px-2 pt-2 pb-3 space-y-1">
+                  {navigation.map((item) => {
+                    const isActive = item.href === '/dashboard'
+                      ? pathname === item.href
+                      : pathname === item.href || pathname?.startsWith(item.href + '/')
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={clsx(
+                          'block px-3 py-2 rounded-md text-base font-medium',
+                          isActive
+                            ? 'bg-gray-700 text-white'
+                            : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                        )}
+                      >
+                        {item.name}
+                      </Link>
+                    )
+                  })}
                 </div>
+                {userProfile && (
+                  <div className="px-4 py-3 border-t border-gray-700">
+                    <div className="flex items-center">
+                      {userProfile.avatar_url ? (
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src={userProfile.avatar_url}
+                          alt={userProfile.full_name}
+                        />
+                      ) : (
+                        <div className="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center">
+                          <FontAwesomeIcon icon={faUserCircle} className="h-5 w-5 text-gray-400" />
+                        </div>
+                      )}
+                      <div className="ml-3 flex-1">
+                        <p className="text-sm font-medium text-white">{userProfile.full_name}</p>
+                        <p className="text-xs text-gray-400">{userProfile.email}</p>
+                      </div>
+                      <button
+                        onClick={handleLogout}
+                        className="ml-2 text-gray-400 hover:text-white"
+                        aria-label="Logout"
+                      >
+                        <FontAwesomeIcon icon={faSignOutAlt} className="h-5 w-5" />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
         )}
+        </div>
       </nav>
     </>
   )
