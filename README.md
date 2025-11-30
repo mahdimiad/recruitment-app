@@ -18,6 +18,8 @@
 [![Forks](https://img.shields.io/github/forks/mahdimiad/recruitment-app?style=social)](https://github.com/mahdimiad/recruitment-app/network/members)
 [![Issues](https://img.shields.io/github/issues/mahdimiad/recruitment-app)](https://github.com/mahdimiad/recruitment-app/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/mahdimiad/recruitment-app)](https://github.com/mahdimiad/recruitment-app/pulls)
+[![Clones](https://img.shields.io/badge/Clones-14-success?logo=github)](https://github.com/mahdimiad/recruitment-app/insights/traffic)
+[![Views](https://img.shields.io/badge/Views-26-blue?logo=github)](https://github.com/mahdimiad/recruitment-app/insights/traffic)
 
 [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-documentation) • [💡 Features](#-features) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
 
