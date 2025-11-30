@@ -255,7 +255,7 @@ export default function Home() {
       </div>
 
       {/* Dashboard Preview Section */}
-      <div className="bg-gray-800 py-16">
+      <div className="bg-gray-800 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base font-semibold text-primary-400 tracking-wide uppercase">
@@ -266,13 +266,14 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-12">
-            <div className="rounded-lg shadow-2xl overflow-hidden border border-gray-700 bg-gray-900">
-              <div className="relative w-full h-[600px] sm:h-[700px] lg:h-[800px]">
+            <div className="overflow-hidden rounded-xl border border-gray-700 bg-gray-900 w-full">
+              <div className="relative w-full h-auto">
                 <Image
-                  src="/images/recruipment-hero.webp"
+                  src="/images/Talentustbanner.png" 
                   alt="Talentust Dashboard Preview"
-                  fill
-                  className="object-contain"
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto rounded-xl"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                   quality={90}
                 />
@@ -485,14 +486,14 @@ export default function Home() {
             <div className="bg-gray-900 rounded-xl p-4 shadow-lg border-2 border-primary-500 relative overflow-hidden md:col-span-2 lg:col-span-1 lg:row-span-2 lg:row-start-1 lg:col-start-2 flex flex-col">
               <div className="absolute top-4 right-4 z-10">
                 <span className="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs font-medium rounded-full border border-primary-500/30">
-                  • Customer
+                  Testimonial
                 </span>
               </div>
               <div className="relative flex-1 -mx-4 -mt-4 mb-3 min-h-0">
                 <div className="w-full h-full bg-gray-800 relative overflow-hidden">
                   <iframe
-                    src="https://www.youtube.com/embed/k3LQciN_bOE"
-                    title="Customer Video Review"
+                    src="https://www.youtube.com/embed/xqtA8gfWENc"
+                    title="Example of Video Testimonial"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"
@@ -501,9 +502,9 @@ export default function Home() {
               </div>
               <div className="mt-auto">
                 <p className="text-white font-semibold">
-                  Sarah <span className="text-primary-400">Martinez</span>
+                  Recruiter <span className="text-primary-400">Martinez</span>
                 </p>
-                <p className="text-gray-400 text-sm mt-1">• TechStart Solutions</p>
+                <p className="text-gray-400 text-sm mt-1">• Recruiter Pro Services</p>
               </div>
             </div>
 
