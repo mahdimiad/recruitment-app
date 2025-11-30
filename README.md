@@ -6,17 +6,18 @@
 
 **AI-Powered Recruitment Management System Built with Next.js & TypeScript**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/yourusername/talenust)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/mahdimiad/talenust)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Download](https://img.shields.io/badge/download-latest-brightgreen)](https://github.com/mahdimiad/talenust/releases/latest)
 [![Next.js](https://img.shields.io/badge/Next.js-16.0-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-Ready-3ecf8e?logo=supabase)](https://supabase.com/)
 
-[![Stars](https://img.shields.io/github/stars/yourusername/talenust?style=social)](https://github.com/yourusername/talenust/stargazers)
-[![Forks](https://img.shields.io/github/forks/yourusername/talenust?style=social)](https://github.com/yourusername/talenust/network/members)
-[![Issues](https://img.shields.io/github/issues/yourusername/talenust)](https://github.com/yourusername/talenust/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/yourusername/talenust)](https://github.com/yourusername/talenust/pulls)
+[![Stars](https://img.shields.io/github/stars/mahdimiad/talenust?style=social)](https://github.com/mahdimiad/talenust/stargazers)
+[![Forks](https://img.shields.io/github/forks/mahdimiad/talenust?style=social)](https://github.com/mahdimiad/talenust/network/members)
+[![Issues](https://img.shields.io/github/issues/mahdimiad/talenust)](https://github.com/mahdimiad/talenust/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/mahdimiad/talenust)](https://github.com/mahdimiad/talenust/pulls)
 
 [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-documentation) • [💡 Features](#-features) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
 
@@ -150,7 +151,7 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/talenust.git
+git clone https://github.com/mahdimiad/talenust.git
 cd talenust
 ```
 
@@ -453,8 +454,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Get Help
 
 - 📖 **Documentation**: Check the `Docs/` directory
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/talenust/discussions)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/talenust/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/mahdimiad/talenust/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/mahdimiad/talenust/issues)
 
 ### Resources
 
