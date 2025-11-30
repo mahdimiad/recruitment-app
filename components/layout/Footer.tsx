@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faFacebook,
   faInstagram,
-  faTwitter,
+  faXTwitter,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
 
@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="#contact" className="text-base text-gray-400 hover:text-primary-400">
+            <Link href="https://x.com/mahdimiad" className="text-base text-gray-400 hover:text-primary-400">
               Contact
             </Link>
           </div>
@@ -49,19 +49,19 @@ export default function Footer() {
           </div>
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
-          <Link href="#" className="text-gray-400 hover:text-primary-400">
+          <Link href="https://facebook.com/mahdimiad" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400">
             <span className="sr-only">Facebook</span>
             <FontAwesomeIcon icon={faFacebook} className="text-xl" />
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-primary-400">
+          <Link href="https://www.instagram.com/mahdimiad" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400">
             <span className="sr-only">Instagram</span>
             <FontAwesomeIcon icon={faInstagram} className="text-xl" />
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-primary-400">
-            <span className="sr-only">Twitter</span>
-            <FontAwesomeIcon icon={faTwitter} className="text-xl" />
+          <Link href="https://x.com/mahdimiad" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400">
+            <span className="sr-only">X</span>
+            <FontAwesomeIcon icon={faXTwitter} className="text-xl" />
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-primary-400">
+          <Link href="https://www.linkedin.com/in/mahdimiad/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400">
             <span className="sr-only">LinkedIn</span>
             <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
           </Link>
