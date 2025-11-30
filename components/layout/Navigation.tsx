@@ -116,10 +116,10 @@ export default function Navigation() {
                   Log in
                 </Link>
                 <Link
-                  href="/signup"
+                  href="/dashboard"
                   className="ml-3 px-4 py-2 rounded-md text-sm font-medium text-gray-900 bg-gradient-to-r from-primary-400 to-primary-400 hover:from-primary-500 hover:to-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                 >
-                  Sign up
+                  See a Demo
                 </Link>
               </>
             )}

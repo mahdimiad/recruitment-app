@@ -242,10 +242,10 @@ export default function Home() {
                     Get Started
                   </Link>
                   <Link
-                    href="#contact"
+                    href="/dashboard"
                     className="w-full sm:w-auto flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg text-gray-900 bg-gradient-to-r from-primary-400 to-primary-400 hover:from-primary-500 hover:to-primary-500 transition-all shadow-lg"
                   >
-                    Book a Demo
+                    See a Demo
                   </Link>
                 </div>
               </div>
